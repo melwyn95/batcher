@@ -56,8 +56,9 @@ build-EURL:
 	$(call compile_contract,tokens/fa2/main.mligo, EURL_token.tz)
 	$(call compile_storage,tokens/fa2/storage/EURL_storage.mligo, EURL_token_storage.tz)
 build-fa12-tzBTC:
-	$(call compile_contract,fa12-token/main.mligo, tzBTC_fa12_token.tz)
-	$(call compile_storage,fa12-token/storage/tzBTC_storage.mligo, tzBTC_fa12_token_storage.tz)
+	$(call clean_files)
+	$(call compile_contract,tokens/fa12/main.mligo, tzBTC_fa12_token.tz)
+	$(call compile_storage,tokens/fa12/storage/tzBTC_storage.mligo, tzBTC_fa12_token_storage.tz)
 test:
 	$(call test_ligo,test/test_batcher_sc.mligo)
 measure:
